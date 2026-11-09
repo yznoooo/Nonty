@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#100d2b">
+<title>NOURA WORLD ✦</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap');
+:root{--bg:#090817;--panel:rgba(25,21,57,.72);--line:rgba(210,190,255,.18);--pink:#ff9ed8;--lav:#bba7ff;--cyan:#8ceaff;--gold:#ffe4a1}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:#fff;font-family:'IBM Plex Sans Arabic',system-ui,sans-serif;background:radial-gradient(ellipse at 50% 0%,#34245e 0%,#15112f 38%,#090817 78%);overflow-x:hidden}
+button{font:inherit;cursor:pointer}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 3s infinite ease-in-out alternate}
+@keyframes twinkle{to{opacity:.15;transform:scale(.5)}}
+.wrap{position:relative;z-index:1;width:min(1060px,92%);margin:auto;padding:28px 0 55px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-size:13px;letter-spacing:4px;color:#d7caff;font-weight:700}
+.progress{font-size:13px;color:#d6cafa;background:#ffffff0c;border:1px solid var(--line);border-radius:30px;padding:9px 14px}
+.hero{text-align:center;padding:50px 0 24px}
+.eyebrow{color:var(--cyan);font-size:12px;letter-spacing:3px}
+h1{font-size:clamp(40px,8vw,76px);line-height:1.1;margin:13px 0;background:linear-gradient(90deg,#fff,var(--pink),var(--lav),#fff);background-clip:text;color:transparent}
+.sub{color:#c9c1e5;max-width:570px;margin:0 auto;line-height:2;font-size:15px}
+.portal{width:178px;height:178px;margin:28px auto 22px;border-radius:50%;display:grid;place-items:center;position:relative;background:radial-gradient(circle,#f7b7f033 0 22%,#a98cff22 40%,transparent 69%);border:1px solid #d8baff66;box-shadow:0 0 35px #b58aff33,inset 0 0 35px #d69aff22;animation:float 5s ease-in-out infinite}
+.portal:before,.portal:after{content:"";position:absolute;inset:9px;border:1px solid #d4b7ff66;border-radius:50%;animation:spin 18s linear infinite}
+.portal:after{inset:-9px;border-style:dashed;opacity:.6;animation-direction:reverse;animation-duration:30s}
+@keyframes spin{to{transform:rotate(360deg)}}@keyframes float{50%{transform:translateY(-9px)}}
+.portal span{font-size:57px;filter:drop-shadow(0 0 16px #ff9ed8)}
+.primary,.secondary{border:0;border-radius:30px;padding:13px 23px;font-weight:700;transition:.2s}
+.primary{color:#20132e;background:linear-gradient(100deg,#ffc0e6,#c8b5ff);box-shadow:0 8px 30px #d39cff33}
+.primary:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.secondary{color:#eee5ff;background:#ffffff0b;border:1px solid var(--line)}
+.section-title{text-align:center;margin:38px 0 18px}
+.section-title h2{font-size:23px;margin:0 0 6px}.section-title p{color:#a9a0c9;font-size:13px;margin:0}
+.worlds{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
+.world{position:relative;min-height:178px;border:1px solid var(--line);border-radius:22px;padding:17px 10px;background:linear-gradient(155deg,#ffffff12,#ffffff04);text-align:center;color:white;transition:.25s;overflow:hidden}
+.world:hover{transform:translateY(-5px);border-color:#d5b5ff88;box-shadow:0 12px 35px #9e7cff22}
+.world.locked{opacity:.5;filter:saturate(.55)}
+.world .planet{font-size:43px;display:block;margin:8px 0 12px;filter:drop-shadow(0 0 12px #d7b5ff55)}
+.world b{display:block;font-size:14px}.world small{display:block;color:#b8afcf;font-size:11px;margin-top:5px}
+.world .state{position:absolute;top:10px;left:11px;font-size:12px}
+.keyline{margin:22px auto 0;max-width:600px;border:1px solid var(--line);background:#ffffff08;border-radius:16px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#d7cdef;font-size:13px}
+.keys{display:flex;gap:6px;direction:ltr}.key{width:22px;height:22px;border-radius:50%;border:1px solid #ffffff33;display:grid;place-items:center;font-size:12px;color:#fff}.key.filled{background:linear-gradient(135deg,#ff9ed8,#9e8cff);border:0;box-shadow:0 0 13px #d99cff88}
+footer{text-align:center;color:#756d91;font-size:11px;margin-top:42px}
+.modal{position:fixed;inset:0;background:#05040dcc;backdrop-filter:blur(10px);z-index:5;display:none;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.dialog{width:min(490px,100%);border:1px solid #d7baff55;border-radius:25px;background:linear-gradient(145deg,#27204c,#14112d);padding:27px;text-align:center;box-shadow:0 20px 80px #0009;position:relative}
+.close{position:absolute;top:12px;left:14px;border:1px solid var(--line);background:#ffffff0b;color:white;border-radius:50%;width:33px;height:33px}
+.dialog .big{font-size:48px;margin:5px}.dialog h3{font-size:24px;margin:7px}.dialog p{color:#d0c8e6;line-height:2;font-size:14px}
+.task{margin:18px 0;padding:14px;border-radius:15px;background:#ffffff0a;border:1px solid var(--line);color:#f4eaff;line-height:1.8}
+.answer{width:100%;padding:12px;border:1px solid #ffffff30;border-radius:12px;background:#0e0b21;color:white;text-align:center;font:inherit;outline:none}
+.feedback{min-height:24px;color:var(--gold);font-size:13px;margin:9px 0}
+.reward{display:none;color:#ffe9b5;line-height:1.9}
+.reward.show{display:block}
+.finalbox{display:none;margin:28px auto 0;max-width:650px;border:1px solid #ffdca366;border-radius:22px;padding:24px;text-align:center;background:linear-gradient(135deg,#ffcf8b16,#d49aff12);box-shadow:0 0 45px #ffd58a12}
+.finalbox.show{display:block;animation:appear .7s ease}
+@keyframes appear{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:none}}
+.finalbox h2{color:#ffe5ad}.finalbox p{color:#e8def8;line-height:2}
+.spark{position:fixed;pointer-events:none;font-size:20px;z-index:8;animation:pop 1s forwards}
+@keyframes pop{to{transform:translate(var(--x),var(--y)) rotate(160deg);opacity:0}}
+@media(max-width:760px){.worlds{grid-template-columns:repeat(2,1fr)}.world:last-child{grid-column:span 2}.hero{padding-top:38px}.world{min-height:160px}.keyline{align-items:flex-start;flex-direction:column}}
+@media(min-width:761px) and (max-width:950px){.worlds{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+<main class="wrap">
+  <div class="top"><div class="logo">✦ NOURA WORLD</div><div class="progress" id="progress">المفاتيح: 0 / 5</div></div>
+  <header class="hero">
+    <div class="eyebrow">A LITTLE UNIVERSE MADE FOR YOU</div>
+    <h1>أهلًا بكِ يا نوره</h1>
+    <p class="sub">فيه عالم صغير انبنى عشانك. خمس وجهات، خمس مفاتيح، ومفاجأة تنتظرك في النهاية… خذي وقتك واستكشفي ✨</p>
+    <div class="portal"><span>🌙</span></div>
+    <button class="primary" onclick="document.getElementById('worldTitle').scrollIntoView({behavior:'smooth'})">ابدئي الرحلة</button>
+  </header>
+
+  <section id="worldTitle">
+    <div class="section-title"><h2>اختاري وجهتك</h2><p>كل عالم يخبي لك شيء صغير</p></div>
+    <div class="worlds">
+      <button class="world" onclick="openWorld(0)"><span class="state" id="state0">○</span><span class="planet">🌸</span><b>حديقة اللطافة</b><small>رسالة مخبأة بين الزهور</small></button>
+      <button class="world" onclick="openWorld(1)"><span class="state" id="state1">○</span><span class="planet">🪐</span><b>كوكب الذكريات</b><small>اختبار من الذاكرة</small></button>
+      <button class="world" onclick="openWorld(2)"><span class="state" id="state2">○</span><span class="planet">🎮</span><b>ركن المرح</b><small>اختاري الصندوق الصحيح</small></button>
+      <button class="world" onclick="openWorld(3)"><span class="state" id="state3">○</span><span class="planet">🌌</span><b>مجرة الأمنيات</b><small>أمنية لكِ من القلب</small></button>
+      <button class="world" onclick="openWorld(4)"><span class="state" id="state4">○</span><span class="planet">💌</span><b>محطة الرسائل</b><small>آخر مفتاح قبل المفاجأة</small></button>
+    </div>
+    <div class="keyline"><span>مفاتيحك اللي جمعتيها</span><div class="keys" id="keys"><span class="key">✦</span><span class="key">✦</span><span class="key">✦</span><span class="key">✦</span><span class="key">✦</span></div></div>
+  </section>
+  <section class="finalbox" id="finalBox">
+    <div style="font-size:42px">🎉💗✨</div><h2>وصلتي لنهاية العالم… وبداية المفاجأة!</h2>
+    <p>يا نوره، يمكن هذا مجرد موقع صغير، بس كل تفصيلة فيه انعملت عشان ترسم لك ابتسامة. وجودك يضيف للأيام شيء جميل، وأتمنى تلقين في يومك أشياء حلوة قد قلبك.</p>
+    <p style="color:#ffe5ad">من شخص حب يسوي لك شيء مختلف 🤍</p>
+    <button class="secondary" onclick="celebrate()">اضغطي هنا للاحتفال</button>
+  </section>
+  <footer>MADE WITH ✦ FOR NOURA · ENDLESS LITTLE UNIVERSE</footer>
+</main>
+
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+ <div class="dialog">
+  <button class="close" onclick="closeModal()">×</button>
+  <div class="big" id="mEmoji">🌸</div><h3 id="mTitle">عنوان العالم</h3>
+  <p id="mIntro"></p>
+  <div class="task" id="task"></div>
+  <div id="interaction"></div>
+  <div class="feedback" id="feedback"></div>
+  <div class="reward" id="reward"></div>
+ </div>
+</div>
+<script>
+const starBox=document.getElementById('stars');
+for(let i=0;i<95;i++){let s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*4+'s';s.style.opacity=.2+Math.random()*.7;starBox.appendChild(s)}
+const worlds=[
+ {emoji:'🌸',title:'حديقة اللطافة',intro:'هنا ما فيه اختبار صعب… بس اختاري الزهرة اللي تحسين إنها تشبه مزاجك اليوم.',task:'أي لون تختارين لزهرتك؟',type:'choice',choices:['وردي 🌷','بنفسجي 💜','أبيض 🤍'],message:'اختيارك جميل! وتستاهلين أيام تشبه هالزهرة: هادئة، لطيفة، ومليانة أشياء تفرّحك.'},
+ {emoji:'🪐',title:'كوكب الذكريات',intro:'خلينا نشوف إذا تعرفين جواب هذا السؤال الكوني.',task:'وش الشيء اللي يخلي اليوم العادي يصير أحلى؟',type:'choice',choices:['تفصيلة صغيرة حلوة ✨','إنجاز كبير فقط','ولا شيء'],correct:0,message:'صح! أحيانًا أبسط التفاصيل هي اللي تصنع أجمل الأيام. عسى أيامك كلها مليانة منها.'},
+ {emoji:'🎮',title:'ركن المرح',intro:'ثلاثة صناديق قدامك، واحد بس مخبّي المفاجأة.',task:'اختاري صندوقًا واحدًا:',type:'choice',choices:['📦 الصندوق الأول','🎁 الصندوق الثاني','🧸 الصندوق الثالث'],correct:1,message:'فزتي! جائزتك: تذكرة مفتوحة ليوم مليان ضحك وأشياء تحبينها. تستاهلين.'},
+ {emoji:'🌌',title:'مجرة الأمنيات',intro:'وقفي لحظة وخذي نفسًا هاديًا… اختاري أمنية من هذي الأمنيات.',task:'وش تتمنين لنفسك هالفترة؟',type:'choice',choices:['راحة وهدوء 🕊️','نجاح وتوفيق ⭐','مغامرات وضحك 🎈'],message:'يا رب تتحقق أمنيتك وأحلى منها بعد. تستاهلين الخير كله.'},
+ {emoji:'💌',title:'محطة الرسائل',intro:'وصلتي آخر محطة! اكتبي كلمة واحدة تتمنين تسمعينها اليوم.',task:'كلمتك الحلوة:',type:'text',message:'وهذي كلمتي لك: أنتِ شخص يستحق التقدير والفرح، ولا تنسين هالشي أبدًا.'}
+];
+let unlocked=[false,false,false,false,false],current=-1;
+function openWorld(i){
+ current=i;let w=worlds[i];document.getElementById('mEmoji').textContent=w.emoji;document.getElementById('mTitle').textContent=w.title;document.getElementById('mIntro').textContent=w.intro;document.getElementById('task').textContent=w.task;document.getElementById('feedback').textContent='';document.getElementById('reward').classList.remove('show');
+ const area=document.getElementById('interaction');area.innerHTML='';
+ if(unlocked[i]){document.getElementById('reward').textContent='هذا العالم صار من عوالمك المكتشفة 🤍';document.getElementById('reward').classList.add('show');}
+ else if(w.type==='choice'){
+  w.choices.forEach((c,n)=>{let b=document.createElement('button');b.className='secondary';b.style.margin='4px';b.textContent=c;b.onclick=()=>answer(n);area.appendChild(b)});
+ }else{let input=document.createElement('input');input.className='answer';input.placeholder='اكتبي كلمتك هنا…';input.id='word';let b=document.createElement('button');b.className='primary';b.style.marginTop='12px';b.textContent='إرسال';b.onclick=()=>answer(document.getElementById('word').value.trim());area.append(input,b)}
+ document.getElementById('modal').classList.add('show');
+}
+function answer(value){
+ let w=worlds[current];if(w.type==='text'&&!value){document.getElementById('feedback').textContent='اكتبي كلمة صغيرة أولًا 🤍';return}
+ if(w.correct!==undefined&&value!==w.correct){document.getElementById('feedback').textContent='مو هذا الاختيار… جربي مرة ثانية! ✨';return}
+ unlocked[current]=true;document.getElementById('state'+current).textContent='✦';document.querySelectorAll('.world')[current].classList.add('done');
+ document.getElementById('feedback').textContent='';document.getElementById('interaction').innerHTML='';
+ let reward=document.getElementById('reward');reward.textContent=w.message;reward.classList.add('show');
+ updateProgress();burst(12);
+}
+function updateProgress(){
+ let count=unlocked.filter(Boolean).length;document.getElementById('progress').textContent=`المفاتيح: ${count} / 5`;
+ document.querySelectorAll('.key').forEach((k,i)=>k.classList.toggle('filled',unlocked[i]));
+ if(count===5)document.getElementById('finalBox').classList.add('show');
+}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+function burst(n){for(let i=0;i<n;i++){let e=document.createElement('span');e.className='spark';e.textContent=['✦','♡','✨','✧'][i%4];e.style.left=(15+Math.random()*70)+'vw';e.style.top=(25+Math.random()*50)+'vh';e.style.setProperty('--x',(Math.random()*150-75)+'px');e.style.setProperty('--y',(Math.random()*-170-30)+'px');document.body.appendChild(e);setTimeout(()=>e.remove(),1100)}}
+function celebrate(){burst(45)}
+</script>
+</body>
+</html>
